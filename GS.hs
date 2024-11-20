@@ -58,3 +58,10 @@ srtsInts' xs = let
   m = mnmInt xs
   in m:(srtsInts' (removeFst m xs))
 
+neg False = True
+neg True = False
+
+
+map' :: (a -> b) -> [a] -> [b]
+map' f [] = []
+map' f (x:xs) = f x : map f xs
